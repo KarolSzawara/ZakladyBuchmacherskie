@@ -23,6 +23,7 @@ public class ExecuteQuery {
             return resultSet;
         }catch (SQLException r){
             Blad.error("Blad poloczenia");
+
         }
         return null;
     }

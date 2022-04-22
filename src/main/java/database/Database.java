@@ -1,5 +1,7 @@
 package database;
 
+import View.Blad;
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,6 +26,13 @@ public class Database {
 
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null,"Brak poloczenia z baza danych");
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                Blad.error("Zakończono połoczenie");
+            }
         }
         return connection;
     }
