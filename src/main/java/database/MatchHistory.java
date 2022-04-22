@@ -1,6 +1,7 @@
 package database;
 
 import Models.User;
+import View.Blad;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -78,7 +79,7 @@ public class MatchHistory {
             else return false;
 
         }catch (SQLException e){
-            e.printStackTrace();
+            Blad.error("Blad bazy danych");
         }
         return false;
     }

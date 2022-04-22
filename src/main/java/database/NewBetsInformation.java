@@ -1,6 +1,7 @@
 package database;
 
 import Models.User;
+import View.Blad;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +22,7 @@ public class NewBetsInformation {
             }
             else return "Brak zakladow na ten mecz";
         }catch (SQLException e){
-            e.printStackTrace();
+            Blad.error("Blad bazy danych");
         }
         return result;
     }
@@ -65,7 +66,7 @@ public class NewBetsInformation {
 
         }
         catch (SQLException e){
-            e.printStackTrace();
+            Blad.error("Blad bazy danych");
         }
         return 0;
     }

@@ -1,5 +1,8 @@
 package database;
 
+import View.Blad;
+
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +22,7 @@ public class ExecuteQuery {
 
             return resultSet;
         }catch (SQLException r){
-
+            Blad.error("Blad poloczenia");
         }
         return null;
     }
@@ -34,7 +37,7 @@ public class ExecuteQuery {
             Statement statement=connection.createStatement();
             statement.execute(query);
         }catch (SQLException e){
-            e.printStackTrace();
+            Blad.error("Blad bazy danych");
         }
     }
 }

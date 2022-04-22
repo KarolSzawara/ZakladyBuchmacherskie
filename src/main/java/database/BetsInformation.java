@@ -1,5 +1,7 @@
 package database;
 
+import View.Blad;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -20,7 +22,7 @@ public class BetsInformation {
             temp.add(resultSet.getString(3));
             temp.add(resultSet.getString(4));
         }catch (SQLException e){
-            e.printStackTrace();
+            Blad.error("Blad bazy danych");
         }
         return temp;
     }
@@ -43,7 +45,7 @@ public class BetsInformation {
                 betsVector.add(temp);
             }
         }catch (SQLException e){
-            e.printStackTrace();
+            Blad.error("Blad bazy danych");
         }
         return betsVector;
     }

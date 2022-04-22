@@ -1,6 +1,7 @@
 package database;
 
 import Models.User;
+import View.Blad;
 
 import javax.swing.*;
 import java.sql.ResultSet;
@@ -22,7 +23,7 @@ public class LoginConfirm {
                 return resultSet.getString(1);
             }else return null;
         }catch (SQLException e){
-            JOptionPane.showMessageDialog(null,"Brak poloczenia z baza danych");
+            Blad.error("Blad poloczenia");
         }
         return null;
     }
